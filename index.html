@@ -14,6 +14,7 @@
   <style>
     :root {
       --custom-dark: #1f2430;
+      --custom-darker: #09091a;
     }
     body {
       margin: 0;
@@ -28,8 +29,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 400px;
-      padding: 100px 20vw;
+      min-height: 300px;
+      padding: 100px 12vw;
+    }
+    h1 {
+      z-index: 10;
+    }
+    p {
+      z-index: 10;
     }
     .blue {
       background-color: blue;
@@ -42,6 +49,9 @@
     }
     .dark {
       background-color: var(--custom-dark);
+    }
+    .darker {
+      background-color: var(--custom-darker);
     }
 
     .curve {
@@ -72,6 +82,20 @@
       transform: translate(-4%, 40%);
       z-index: 1;
     }
+
+    .bubble::after {
+      content: '';
+      border-top-left-radius: 50% 100%;
+      border-top-right-radius: 50% 100%;
+      position: absolute;
+      bottom: 0;
+      border-radius: 100% 50%;
+      height: 85%;
+      width: 100%;
+      background-color: var(--custom-darker);
+      transform: rotate(8deg) translate(-46%, 64%);
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
@@ -93,11 +117,12 @@
     <h1>Nice curves</h1>
     <p>Quia cumque nesciunt blanditiis perferendis? Ipsum laborum modi praesentium accusamus, expedita placeat reiciendis iure quasi ipsam omnis assumenda iusto nemo debitis quas. Earum accusantium sed ullam debitis deleniti necessitatibus quia.</p>
   </section>
-  <section>
+  <section class="dark">
     <h1>Nice curves</h1>
     <p>Possimus provident itaque, mollitia quasi soluta iste aliquam consequatur numquam est animi officiis nulla eius quam. Aliquid, sapiente ipsam! Officia suscipit quis dolorem non esse, mollitia incidunt a earum magni.</p>
+    <div class="bubble"></div>
   </section>
-  <section>
+  <section class="darker">
     <h1>Nice curves</h1>
     <p>Hic minima nisi architecto dignissimos quibusdam numquam, rem corrupti est porro reprehenderit recusandae odit maiores velit veniam? Optio veniam vel unde ullam ipsum exercitationem nihil. Quas vero in odio eligendi?</p>
   </section>
