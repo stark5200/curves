@@ -12,11 +12,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --custom-dark: #1f2430;
+    }
     body {
       margin: 0;
       font-family: 'Sometype Mono', monospace;
       color: aliceblue;
-      background-color: #1f2430;
+      background-color: var(--custom-dark);
+      overflow-x: hidden;
     }
 
     section {
@@ -27,23 +31,65 @@
       min-height: 400px;
       padding: 100px 20vw;
     }
+    .blue {
+      background-color: blue;
+    }
+    .red {
+      background-color: red;
+    }
+    .pink {
+      background-color: pink;
+    }
+    .dark {
+      background-color: var(--custom-dark);
+    }
+
+    .curve {
+      position: absolute;
+      height: 225px;
+      width: 100%;
+      bottom: 0;
+    }
+    .curve::before {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 100% 50%;
+      width: 55%;
+      height: 100%;
+      background-color: var(--custom-dark);
+      transform: translate(85%, 60%);
+      z-index: 2;
+    }
+    .curve::after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 100% 50%;
+      width: 55%;
+      height: 100%;
+      background-color: blue;
+      transform: translate(-4%, 40%);
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
 
-  <section class="slate-600">
+  <section class="blue">
     <h1>Nice curves</h1>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate voluptatem iure eaque sint saepe corporis excepturi maiores sapiente iste, sequi molestias incidunt natus soluta est atque architecto, fuga perferendis praesentium!</p>
+    <div class="curve"></div>
   </section>
-  <section>
+  <section class="dark">
     <h1>Nice curves</h1>
     <p>Distinctio, cupiditate totam esse repudiandae consectetur, obcaecati officia maiores nesciunt beatae vero voluptatum iusto porro facere sunt repellendus dolores fuga dignissimos doloremque expedita accusamus iste! Officiis, reiciendis. Illo, vel minus.</p>
   </section>
-  <section>
+  <section class="pink">
     <h1>Nice curves</h1>
     <p>Qui repellat, labore reiciendis eligendi natus necessitatibus architecto, sint fugit temporibus ipsam cum dolores? Tenetur ducimus praesentium distinctio cum eveniet tempora, non aut quae assumenda perferendis doloribus consequatur rem adipisci.</p>
   </section>
-  <section>
+  <section class="red">
     <h1>Nice curves</h1>
     <p>Quia cumque nesciunt blanditiis perferendis? Ipsum laborum modi praesentium accusamus, expedita placeat reiciendis iure quasi ipsam omnis assumenda iusto nemo debitis quas. Earum accusantium sed ullam debitis deleniti necessitatibus quia.</p>
   </section>
