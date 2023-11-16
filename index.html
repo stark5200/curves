@@ -20,6 +20,8 @@
       :root {
         --custom-dark: #252935;
         --custom-darker: #09091a;
+        --clr-accent: #f928c8;
+        --clr-accent-light: #fbade9;
       }
       body {
         margin: 0;
@@ -150,6 +152,20 @@
       .blob-motion {
         position: absolute;
         transform: translateY(-20%);
+      }
+
+      .btn {
+        font-size: 2rem;
+        font-weight: 700;
+        padding: 0.5em 1em;
+        color: (var(--clr-accent));
+        background-color: (var(--clr-accent-light));
+        border: 10px solid var(--clr-accent);
+        border-radius: 5px;
+      }
+
+      .btn:hover {
+        transform: translateY(-10px);
       }
     </style>
   </head>
@@ -308,5 +324,10 @@
 
     </section>
     <div class="spacer2 layer2"></div>
+
+    <!-- // more about animations and transitions -->
+    <section>
+      <button class="btn">Learn More</button>
+    </section>
   </body>
 </html>
