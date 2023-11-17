@@ -177,6 +177,14 @@
         color: var(--clr-accent-light);
       }
 
+      /* Utility Classes */
+      .animate {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+      }
+
+      /* Animations */
+
       @keyframes slideInLeft {
         from {
           transform: translateX(-300px);
@@ -187,8 +195,9 @@
         }
       }
 
-      .heading1 {
-        animation: slideInLeft 1s ease-in 0s 1 normal both;
+      .slideInLeft {
+        animation: slideInLeft 1s ease-in;
+
         /* 
         animation-name: slideInLeft;
         animation-duration: 1s;
@@ -198,7 +207,9 @@
         animation-direction: normal;
         animation-fill-mode: both;
         */
+      }
 
+      .heading1 {
         font-size: 2rem;
         font-weight: 700;
         padding: 0.5em 1em;
@@ -383,7 +394,7 @@
       <button class="btn">Learn More</button>
     </section>
     <section>
-      <h1 class="heading1">Hello, World!</button>
+      <h1 class="heading1 slideInLeft">Hello, World!</button>
     </section>
   </body>
 </html>
