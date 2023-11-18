@@ -334,10 +334,42 @@
         border-radius: 0.25rem;
         cursor: pointer;
         font-size: 2rem;
+        transition: transform 800ms;
       }
       .KP-button:hover, 
       .KP-button:focus-visible {
-        transform: translateY(-0.75rem);
+        transform: translateY(-1.75rem);
+        transition: transform 300ms;
+      }
+
+      .party-time {
+        animation: party 2000ms infinite;
+      }
+
+      @keyframes party {
+        0% {
+          background-color: red;
+        }
+
+        20% {
+          background-color: green;
+        }
+
+        40% {
+          background-color: blue;
+        }
+
+        60% {
+          background-color: yellow;
+        }
+
+        80% {
+          background-color: violet;
+        }
+        
+        100% {
+          background-color: orange;
+        }
       }
 
     </style>
@@ -491,8 +523,13 @@
           {path: '#blob2'}, 
           {repeat: 999, duration: 3000, yoyo: true, easing: 'easingQuadraticInOut' }
         )
-
         tween.start()
+
+        const button = document.querySelector('KP-button');
+        button.addEventListener('click', () => {
+          button.classList.toggle('party-time');
+          console.log("clicked");
+        })
       </script>
 
     </section>
