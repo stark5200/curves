@@ -22,6 +22,7 @@
         --custom-darker: #09091a;
         --clr-accent: #f928c8;
         --clr-accent-light: #fbade9;
+        --clr-primary-400: #4c39de;
       }
       body {
         margin: 0;
@@ -199,6 +200,10 @@
         animation-duration: 3s;
       }
 
+      .animate.animate--slowest {
+        animation-duration: 20s;
+      }
+
       /* Animations */
 
       @keyframes slideInLeft {
@@ -268,6 +273,13 @@
         transform-origin: top left;
       }
 
+      .spin {
+        animation-name: rotate;
+        animation-timing-function: ease-in-out;
+
+        transform-origin: center;
+      }
+
       @keyframes bounce {
         0%, 20%, 50%, 80%, 100% {
           transform: translateY(0);
@@ -312,6 +324,22 @@
         background-color: var(--clr-accent);
         color: var(--clr-accent-light);
       }
+
+      /* Kevin Powell */
+
+      .KP-button {
+        padding: 1em 2em;
+        background: var(--clr-primary-400) ;
+        border: 0;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        font-size: 2rem;
+      }
+      .KP-button:hover, 
+      .KP-button:focus-visible {
+        transform: translateY(-0.75rem);
+      }
+
     </style>
   </head>
   <body>
@@ -440,7 +468,7 @@
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         version="1.1"
-        class="blob-motion"
+        class="blob-motion animate spin animate--slowest animate--infinite"
       >
         <g transform="translate(641.8049653202527 267.4191723282795)">
           <path id="blob1"
@@ -461,7 +489,7 @@
           '#blob1', 
           {path: '#blob1'},
           {path: '#blob2'}, 
-          {repeat: 999, duration: 2500, yoyo: true }
+          {repeat: 999, duration: 3000, yoyo: true, easing: 'easingQuadraticInOut' }
         )
 
         tween.start()
@@ -478,6 +506,9 @@
       <h1 class="animate bounce heading1">Hello, World!</h1>
       <h2 class="animate slideInRight animate--slow">Hello, World!</h2>
       <h3 class="animate rotate animate--slow animate--infinite">Hello, World!</h3>
+    </section>
+    <section>
+      <button class="KP-button">Click Me!</button>
     </section>
   </body>
 </html>
